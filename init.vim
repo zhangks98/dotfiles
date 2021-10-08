@@ -1,11 +1,7 @@
-" Use Homebrew Python3 as host program.
-let g:python3_host_prog = '/usr/local/bin/python3'
-
 " Specify a directory for plugins.
 call plug#begin(stdpath('data') . '/plugged')
 
 " Make sure you use single quotes
-
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -32,6 +28,8 @@ colorscheme gruvbox
 
 set number
 set relativenumber
+set splitright
+set splitbelow
 
 let g:indent_guides_enable_on_vim_startup = 1
 
