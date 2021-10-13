@@ -42,11 +42,5 @@ autocmd BufNewFile,BufRead *.py setlocal softtabstop=4 shiftwidth=4
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-" Navigate between splits.
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " neovim-lspconfig specifics
 source ~/.config/nvim/lsp.vim
