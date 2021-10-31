@@ -23,8 +23,9 @@ call plug#end()
 if exists('+termguicolors')
   set termguicolors
 endif
-
 colorscheme gruvbox
+
+inoremap jk <Esc>
 
 set number
 set relativenumber
