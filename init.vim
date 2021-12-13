@@ -20,6 +20,8 @@ Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 
+Plug 'zhangks98/vim-language-p4'
+
 " Initialize plugin system.
 call plug#end()
 
@@ -31,6 +33,7 @@ colorscheme gruvbox
 
 inoremap jk <Esc>
 
+set mouse=a
 set number
 set relativenumber
 set splitright
@@ -43,9 +46,14 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.py setlocal softtabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.py,*.p4 setlocal softtabstop=4 shiftwidth=4
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-" neovim-lspconfig specifics
-source ~/.config/nvim/lsp.vim
+" nvim-lspconfig specifics.
+source ~/.config/nvim/lsp.lua
+autocmd BufWritePre *.go lua goimports(1000)
+autocmd BufWritePre *.h,*.c,*.cc,*.cpp lua vim.lsp.buf.formatting_sync(nil, 1000)
+
+" Set commentstring.
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
