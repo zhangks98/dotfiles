@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
@@ -40,6 +41,7 @@ set splitright
 set splitbelow
 
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
 
 " Set indentation.
 set expandtab
