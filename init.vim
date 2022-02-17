@@ -10,7 +10,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
@@ -39,9 +39,6 @@ set number
 set relativenumber
 set splitright
 set splitbelow
-
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
 
 " Set indentation.
 set expandtab
