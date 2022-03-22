@@ -32,6 +32,12 @@ if exists('+termguicolors')
 endif
 colorscheme gruvbox
 
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr = ' ℅:'
+
 inoremap jk <Esc>
 
 set mouse=a
@@ -39,6 +45,7 @@ set number
 set relativenumber
 set splitright
 set splitbelow
+set cursorline
 
 " Set indentation.
 set expandtab
