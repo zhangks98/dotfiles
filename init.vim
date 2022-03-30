@@ -13,7 +13,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
 
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
@@ -21,7 +20,7 @@ Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 
-Plug 'zhangks98/vim-language-p4'
+Plug 'zhangks98/vim-p4'
 
 " Initialize plugin system.
 call plug#end()
