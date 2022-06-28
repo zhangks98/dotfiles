@@ -8,17 +8,18 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'morhetz/gruvbox'
 
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
-Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
-Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
-Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
-Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddc-nvim-lsp'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
 
 Plug 'zhangks98/vim-p4'
 
@@ -31,11 +32,9 @@ if exists('+termguicolors')
 endif
 colorscheme gruvbox
 
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.colnr = ' ℅:'
+lua << END
+require('lualine').setup()
+END
 
 inoremap jk <Esc>
 
