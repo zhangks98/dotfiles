@@ -34,9 +34,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Link tmux config files.
-ln -s tmux.conf $HOME/.tmux.conf
+ln -s $(pwd)/tmux.conf $HOME/.tmux.conf
 
 # Link inputrc if current shell is bash.
 if [[ "$SHELL" == *bash ]]; then
-  ln -s inputrc $HOME/.inputrc
+  ln -s $(pwd)/inputrc $HOME/.inputrc
 fi
