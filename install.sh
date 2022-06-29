@@ -16,14 +16,9 @@ fi
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# Link tmux config files.
-ln -s tmux.conf $HOMW/.tmux.conf
-
 # Link neovim config files.
 nvim_config="${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-mkdir $nvim_config
-ln -s init.vim $nvim_config/init.vim
-ln -s lsp.lus $nvim_config/lsp.lua
+ln -s $(pwd)/nvim $nvim_config
 
 # Install Node.js, deno and pyright.
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -38,4 +33,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew install deno
 fi
 
-# Install deno.
+# Link tmux config files.
+ln -s tmux.conf $HOME/.tmux.conf
+
+# Link inputrc if current shell is bash.
+if [[ "$SHELL" == *bash ]]; then
+  ln -s inputrc $HOME/.inputrc
+fi
