@@ -15,11 +15,10 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'morhetz/gruvbox'
 
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
-Plug 'vim-denops/denops.vim'
-Plug 'Shougo/ddc.vim'
-Plug 'Shougo/ddc-nvim-lsp'
-Plug 'Shougo/ddc-matcher_head'
-Plug 'Shougo/ddc-sorter_rank'
+Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
+Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
+Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
+Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 
 Plug 'zhangks98/vim-p4'
 
