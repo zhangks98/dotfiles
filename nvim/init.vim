@@ -56,8 +56,8 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 " nvim-lspconfig specifics.
 source ~/.config/nvim/lsp.lua
-autocmd BufWritePre *.go lua goimports(1000)
-autocmd BufWritePre *.h,*.c,*.cc,*.cpp lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd FileType go autocmd BufWritePre <buffer> lua goimports(1000)
+autocmd FileType c,cpp autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 " Set commentstring.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s

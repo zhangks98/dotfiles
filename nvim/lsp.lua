@@ -36,7 +36,11 @@ require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
 }
 
-vim.cmd [[ 
+require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+}
+
+vim.cmd [[
   call ddc#custom#patch_global('sourceOptions', {
         \ '_': {
         \   'matchers': ['matcher_head'],
@@ -49,6 +53,6 @@ vim.cmd [[
         \   'mark': 'lsp',
         \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
         \ })
-  
+
   call ddc#enable()
 ]]
