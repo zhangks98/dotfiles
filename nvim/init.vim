@@ -1,8 +1,6 @@
 lua << END
 require('plugins')
 require('lsp')
-require("nvim-tree").setup()
-require('lualine').setup()
 END
 
 nnoremap <space>e :NvimTreeToggle<CR>
@@ -33,4 +31,4 @@ autocmd FileType go autocmd BufWritePre <buffer> lua goimports(1000)
 autocmd FileType c,cpp autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 " Set commentstring.
-autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+autocmd FileType c,cpp,cs,java,p4 setlocal commentstring=//\ %s
