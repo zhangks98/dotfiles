@@ -1,6 +1,9 @@
 lua << END
 require('plugins')
 require('lsp')
+require('nvim-tree').setup()
+require('lualine').setup()
+require('indent_blankline').setup()
 END
 
 nnoremap <space>e :NvimTreeToggle<CR>
@@ -26,9 +29,9 @@ set softtabstop=2
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.py,*.p4 setlocal softtabstop=4 shiftwidth=4
 
-" nvim-lspconfig specifics.
-autocmd FileType go autocmd BufWritePre <buffer> lua goimports(1000)
+" Language specifics.
 autocmd FileType c,cpp autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd FileType p4 autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Set commentstring.
 autocmd FileType c,cpp,cs,java,p4 setlocal commentstring=//\ %s

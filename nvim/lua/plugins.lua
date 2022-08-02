@@ -21,16 +21,10 @@ return require('packer').startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons', -- For file icons
     },
-    config = function() require('nvim-tree').setup() end,
   }
-  use {
-    'nvim-lualine/lualine.nvim',
-    config = function() require('lualine').setup() end,
-  }
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function() require('indent_blankline').setup() end,
-  }
+  use 'nvim-lualine/lualine.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'navarasu/onedark.nvim'
   use 'morhetz/gruvbox'
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
