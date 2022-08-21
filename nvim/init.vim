@@ -4,16 +4,19 @@ require('lsp')
 require('nvim-tree').setup()
 require('lualine').setup()
 require('indent_blankline').setup()
+-- Colorscheme.
+require('onedark').setup {
+    style = 'warm'
+}
+require('onedark').load()
 END
 
 nnoremap <space>e :NvimTreeToggle<CR>
-inoremap jk <Esc>
 
 " Set Vim-specific sequences for RGB colors.
 if exists('+termguicolors')
   set termguicolors
 endif
-colorscheme gruvbox
 
 set mouse=a
 set number
