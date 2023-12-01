@@ -12,10 +12,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew install neovim
 fi
 
-# Install packer.nvim.
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-  "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/packer/start/packer.nvim
-
 # Link neovim config files.
 nvim_config="${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ln -s $(pwd)/nvim $nvim_config

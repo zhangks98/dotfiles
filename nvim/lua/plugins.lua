@@ -1,37 +1,51 @@
--- Run :PackerCompile whenever plugins.lua is updated
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+return {
+  "tpope/vim-sensible",
+  "tpope/vim-surround",
+  "tpope/vim-commentary",
+  "tpope/vim-repeat",
+  "tpope/vim-fugitive",
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup()
+    end,
+  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  {
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('onedark').setup { style = 'darker' }
+      require('onedark').load()
+    end,
+  },
 
-  use 'tpope/vim-sensible'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-fugitive'
+  -- LSP
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-nvim-lua",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-vsnip",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/vim-vsnip",
+  "neovim/nvim-lspconfig",
+  "onsails/lspkind.nvim",
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- For file icons
-    },
-  }
-  use 'nvim-lualine/lualine.nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
-  use 'navarasu/onedark.nvim'
-  use 'morhetz/gruvbox'
-
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
-
-  use 'zhangks98/vim-p4'
-end)
+  -- Diagnostics
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+}
