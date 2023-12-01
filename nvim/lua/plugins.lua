@@ -23,12 +23,13 @@ return {
 	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{
-		"navarasu/onedark.nvim",
+		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("onedark").setup({ style = "warm" })
-			require("onedark").load()
+			require("gruvbox").setup()
+			vim.o.background = "dark"
+			vim.cmd([[colorscheme gruvbox]])
 		end,
 	},
 
