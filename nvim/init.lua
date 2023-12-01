@@ -36,7 +36,6 @@ vim.wo.relativenumber = true
 vim.wo.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.autowrite = true
 vim.opt.mouse = "a"
 
 -- Set indentation.
