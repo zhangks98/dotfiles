@@ -31,7 +31,7 @@ if vim.fn.exists("+termguicolors") then
   vim.opt.termguicolors = true
 end
 if vim.fn.has("nvim-0.10") == 1 then
-  opt.smoothscroll = true
+  vim.opt.smoothscroll = true
 end
 
 vim.wo.number = true
