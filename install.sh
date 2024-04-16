@@ -16,15 +16,14 @@ fi
 nvim_config="${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ln -s $(pwd)/nvim $nvim_config
 
-# Install Node.js and pyright.
+# Install Node.js.
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # Linux (Using Ubuntu)
   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
   sudo apt-get install -y nodejs
-  sudo npm install -g pyright
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS
-  brew install pyright
+  brew install node
 fi
 
 # Link tmux config files.
